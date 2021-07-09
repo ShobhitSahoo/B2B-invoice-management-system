@@ -1,0 +1,394 @@
+* {
+    padding: 0;
+    margin: 0; 
+}
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit; 
+}
+  
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: radial-gradient(#58687E, #39495E);
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.header {
+    width: 92rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.logo {
+    height: 4rem;
+    width: 29rem;
+}
+
+.invoice {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-top: 2.4rem;
+    margin-left: 2.5rem;
+}
+
+.container {
+    background-color: #273D49CC;
+    height: 57rem;
+    width: 97vw;
+    margin: 5rem 2rem 2rem 2rem;
+    border-radius: 1rem;
+    padding-left: 2.5rem;
+}
+
+th {
+    font-size: 1.5rem;
+}
+
+.table__data {
+    padding: 0.75rem;
+}
+
+.container__menu {
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: flex-end;
+    padding: 2rem 0rem 2rem 4rem;
+    align-items: center;
+}
+
+.container__menu > * {
+    margin-right: 2rem;
+    border-radius: 0.6rem;
+}
+
+.action__btns {
+    font-size: 1.5rem;
+    height: 3.4rem;
+    width: inherit;
+    padding: 0 1.3rem; 
+    border: 2px solid #97A1A9;
+    background-color: transparent;
+    transition: all 0.4s;
+}
+
+.btn__link {
+    text-decoration: none;
+    color: #97A1A9;
+}
+
+.minus {
+    transform: translateY(-4px);
+}
+
+.search__input {
+    padding: 0 2rem;
+    width: 30rem;
+    color: #97A1A9;
+    height: 3.6rem;
+    font-size: 1.6rem;
+    background-color: #283A46;
+    border: 1px solid #356680;
+}
+
+.search__icon {
+    right: 5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.data__head {
+    padding-right: 5rem;
+    color: #97A1A9;
+    font-size: 1.6rem;
+    text-align: center;
+    padding-left: 4rem;
+}
+
+.checkBG {
+    background-color: #2A5368;
+}
+
+tr > * {
+    padding: 1rem 2rem;
+}
+
+.even {
+   background-color: #283A46;
+   border-radius: 0.4rem;
+}
+
+.data__row {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.data {
+    z-index: 30;
+}
+
+.nav {
+    width: 100%;
+    position: relative;
+    top: -35rem;
+    display: flex;
+    justify-content: space-between; 
+    background-color: #888;
+}
+
+.nav__left, .nav__right {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 500rem;
+    box-shadow: 0 0 0.4rem #000;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav__left {
+    float: left;
+    top: -35rem;
+    transform: rotate(-180deg);
+    background-color: #39495E;
+}
+
+.nav__right {
+    float: right;
+    top: -35rem;
+    background-color: #14AFF1;
+}
+
+.left__arrow, .right__arrow {
+    transform: rotate(-90deg);
+}
+
+.modal {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.modal:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__add, .modal__edit, .modal__delete {
+    width: 60%;
+    height: 42rem;
+    background-color: #2A3E4C;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    padding: 2rem 3.5rem;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.add__invoice, .edit__invoice, .delete__invoice {
+    font-size: 2.5rem;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #97A1A9;
+}
+
+.star {
+    color: #FF5B5B;
+    margin-left: 0.5rem;
+}
+
+.form__left, .form__right {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+}
+
+.form__group  input {
+    background-color: #283A46;
+    border: 1px solid #356680;
+    width: 24rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    color: #fff;
+}
+
+.form__group label {
+    display: flex;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.form__right {
+    margin-left: 8rem;
+}
+
+.add_form_note, .edit_form_note {
+    background-color: #283A46;
+    border: 1px solid #356680;
+    color: #fff;
+    width: 25rem;
+    border-radius: 0.6rem;
+}
+
+.add__footer, .edit__footer, .delete__footer {
+    display: flex;
+    padding-top: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cancel {
+    color: #14AFF1;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__right {
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+}
+
+.btn__right * {
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #14AFF1;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.disabled {
+    background-color: #97A1A9;
+    cursor: not-allowed;
+}
+
+.enabled {
+    background-color: #14AFF1;
+    cursor: pointer;
+}
+
+.modal__edit {
+    width: 45rem;
+    height: 40rem;
+}
+
+.modal__delete {
+    width: 48rem;
+    height: 28rem;
+}
+
+.edit__form, .edit__feild {
+    width: 100%;
+}
+
+.delete__warn {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+}
+
+.delete__footer {
+    align-items: flex-end;
+}
+
+.calendar {
+    height: 2.4rem;
+    width: 2.4rem;
+    transform: translate(35rem, -4.25rem);
+}
+
+.close__modal {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn__enabled {
+	border: 1px solid #14AFF1;
+	cursor: pointer;
+}
+
+.btn__disabled {
+	border: 1px solid #97A1A9;
+	cursor: not-allowed;
+}
+
+.btn__disabled > a {
+	cursor: not-allowed;
+}
+
+.C_name {
+	text-align: left;
+}
+
+.snackbars {
+    visibility: hidden;
+    position: fixed;
+    height: 50rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.snackbars > * {
+    margin-top: 1.7rem;
+    font-size: 1.6rem;
+}

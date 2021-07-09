@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon.png"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>H2H Invoice Management System</title>
+    <script type="module" src="./js/script.js"></script>
+   
+</head>
+<body>
+    
+    <header class="header">
+        <a href=""><img src="./images/Group 20399.svg" alt="Logo ABC" class="logo logo__abc"></a>
+        <a href=""><img src="./images/logo.svg" alt="Logo HRC" class="logo logo__hrc"></a>
+    </header>
+    <div class="invoice">Invoice List</div>
+    
+    <section class="container">
+
+        <div class="container__menu">
+            <button class="action__btns add btn__enabled">
+                <a href="#add" class="btn__link"><img src="./images/svg_plus.svg" alt="plus"> Add</a>
+            </button>
+            <button class="action__btns edit">
+                <a href="#edit" class="btn__link"><img src="./images/svg_edit.svg" alt="edit"> Edit</a>
+            </button>
+            <button class="action__btns delete">
+                <a href="#delete" class="btn__link"><img src="./images/svg_minus.svg" alt="minus" class="minus"> Delete</a>
+            </button>
+            
+            <input type="text" class="search__input" placeholder="Search by Invoice Number" required>
+            <img src="./images/search-24px (3).svg" alt="search icon" class="search__icon">
+        </div>  
+
+        <div class="data">
+            <table cellspacing="0" class="data__table">
+                <thead class="table__heading">
+                    <tr>
+                        <th ><input type="checkbox" class="checkbox__main"></th>
+                        <th class="data__head">Customer Name</th>
+                        <th class="data__head">Customer #</th>
+                        <th class="data__head">Invoice #</th>
+                        <th class="data__head">Invoice Amount</th>
+                        <th class="data__head">Due Date</th>
+                        <th class="data__head">Predicted Payment Date</th>
+                        <th class="data__head">Notes</th>
+                    </tr>
+                </thead>
+
+                <tbody class="table__body">
+                    <!--<tr id="row_0">
+                        <td><input type="checkbox" class="checkbox"></td>
+                        <td class="data__row">Andrea James</td>
+                        <td class="data__row">2523532</td>
+                        <td class="data__row">73457346735</td>
+                        <td class="data__row">122.87K</td>
+                        <td class="data__row">23-Jan-2021</td>
+                        <td class="data__row">--</td>
+                        <td class="data__row">Lorem Ipsum dolor...</td>
+                    </tr>
+    
+                    <tr class="even" id="row_7">
+                        <td><input type="checkbox" class="checkbox"></td>
+                        <td class="data__row">Andrea James</td>
+                        <td class="data__row">2523532</td>
+                        <td class="data__row">73457346735</td>
+                        <td class="data__row">122.87K</td>
+                        <td class="data__row">23-Jan-2021</td>
+                        <td class="data__row">--</td>
+                        <td class="data__row">Lorem Ipsum dolor...</td>
+                    </tr> -->
+                </tbody>
+
+            </table>
+        </div>
+        
+    </section>
+
+    <div class="nav__left"><img src="./images/Polygon 1-1.svg" alt="left arrow" class="left__arrow"></div>
+    <div class="nav__right"><img src="./images/Polygon 1-1.svg" alt="right arrow" class="right__arrow"></div>
+
+    <div class="modal" id="add">
+        <div class="modal__add">
+            <div class="modal__header">
+                <div class="add__invoice">Add Invoice</div>
+                <div class="close"><a href="" class="close__modal"><img src="./images/baseline-close-24px.svg" alt="close"></a></div>
+            </div>
+            <div class="add__form">
+                <form action="#" class="form">
+                    <div class="form__left">
+                        
+                        <div class="form__group"> 
+                            <label for="C_name">Customer Name <span class="star">*</span> </label>
+                            <input type="text" id="C_name" required>
+                        </div>
+        
+                        <div class="form__group">
+                            <label for="C_number">Customer No. <span class="star">*</span> </label>
+                            <input type="tel" id="C_number" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="I_number">Invoice No. <span class="star">*</span> </label>
+                            <input type="tel" id="I_number" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="I_amount">Invoice Amount <span class="star">*</span> </label>
+                            <input type="text" id="I_amount" required>
+                        </div>
+
+                    </div>
+                    <div class="form__right">
+                        <div class="form__group">
+                            <label for="dueDate">Due Date <span class="star">*</span></label>
+                            <input type="date" id="dueDate" placeholder="" required>
+                        </div>
+                        <!--<img src="./images/calendar_today-24px.svg" alt="calendar" class="calendar">   -->                     
+                        <div class="form__group">
+                            <label for="notes">Notes</label>
+                            <textarea name="notes" class="add_form_note" id="notes" cols="30" rows="8"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="add__footer">
+                <div class="btn__left">
+                    <div class="cancel"><a href="" class="close__modal">Cancel</a></div>
+                </div>
+                <div class="btn__right">
+                    <input type="button" value="Clear" class="btn__clear">
+                    <input type="button" value="Add" class="btn__add enabled " >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="edit">
+        <div class="modal__edit">
+            <div class="modal__header">
+                <div class="edit__invoice">Edit Invoice</div>
+                <div class="close"><a href="" class="close__modal"><img src="./images/baseline-close-24px.svg" alt="close"></a></div>
+            </div>            
+            <div class="edit__form">
+                <form action="#" class="form">
+                    <div class="edit__feild">
+                        <div class="form__group">
+                            <label for="invoice">Invoice Amount </label>
+                            <input type="tel" id="editInvoice" placeholder="" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="notes">Notes</label>
+                            <textarea name="notes" class="edit_form_note" id="notes" cols="20" rows="8"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="edit__footer">
+                <div class="btn__left">
+                    <div class="cancel"><a href="" class="close__modal">Cancel</a></div>
+                </div>
+                <div class="btn__right">
+                    <input type="button" value="Reset" class="btn__reset">
+                    <input type="button" value="Save" class="btn__save enabled" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="delete">
+        <div class="modal__delete">
+            <div class="modal__header">
+                <div class="delete__invoice">Delete Record(s)?</div>
+                <div class="close"><a href="" class="close__modal"><img src="./images/baseline-close-24px.svg" alt="close"></a></div>
+            </div>
+            <div class="delete__body">
+                <div class="delete__warn">
+                    You'll lose your record(s) after this action. We can't recover them once you delete. <br><br><br>
+                    Are you sure you want to <b class="star">permanently delete</b> them?
+                </div>
+            </div>
+            <div class="delete__footer">
+                <div class="btn__left"></div>
+                <div class="btn__right">
+                    <a href="" class="close__modal" style="font-size: 1.5rem;">Cancel</a>
+                    <input type="button" value="Delete" class="btn__delete enabled" >
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
